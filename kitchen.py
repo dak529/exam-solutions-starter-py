@@ -23,8 +23,8 @@ if __name__ == "__main__":
     # Assuming the identifier, or "id" attribute, of each salad is and will always be unique,
     # ... and assuming the order of salads may vary,
     # ... "print" the name of the salad whose identifier is equal to 3 (i.e. "Waldorf"):
-    
-   print([s["name"] for s in salads if s["id"] == 3][0])
+   
+    print([s["name"] for s in salads if s["id"] == 3][0])
 
     #
     # QUESTION B
