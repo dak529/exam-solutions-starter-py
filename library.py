@@ -22,7 +22,7 @@ if __name__ == "__main__":
     # ... and assuming the order of books may vary,
     # ... "print" the title of the book whose identifier is equal to 4 (i.e. "Book D"):
 
-#print([s["title"] for s in books if s["id"] == 4][0])
+print([s["title"] for s in books if s["id"] == 4][0])
 
     #
     # QUESTION B

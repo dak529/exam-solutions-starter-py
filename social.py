@@ -59,9 +59,17 @@ if __name__ == "__main__":
     # Of all the tweets which include the phrase "@sandwhoa" in their full text,
     # ... "print" the screen name of the user who authored that tweet,
     # ... each on a separate line (i.e. "person2", then "person3"):
-    user_info = ([n["user"] for n in tweets if "@sandwhoa" in ["full_text"]])
-    print(user_info)
 
+    def contains_shop(message):
+        return "@sandwhoa" in message["full_text"]
+
+    at_us = list(filter(contains_shop, tweets))
+
+    users = ([n["user"]["screen_name"] for n in at_us])
+    print(*users,sep='\n')
+
+
+    
 
     #
     # QUESTION C
@@ -71,3 +79,11 @@ if __name__ == "__main__":
     # ... and then "print" the screen name of the user who authored that tweet (i.e. "person3").
     # ... FYI: Assume the tweet order can change at any time
     # ... and has no relationship with the number of likes.
+
+    def top_tweet(all_tweets):
+         return max(all_tweets, key=lambda best: best["likes_count"])
+    
+    
+    influencer = (top_tweet(tweets))
+    
+    print(str(influencer["user"]["screen_name"]))
